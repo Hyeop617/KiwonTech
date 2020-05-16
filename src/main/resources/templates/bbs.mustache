@@ -1,0 +1,26 @@
+{{>layout/header}}
+    <h1>Hello World!</h1>
+    <table class="table table-primary table-bordered">
+        <thead>
+        <td>
+            <th>번호</th>
+            <th>제목</th>
+            <th>글쓴이</th>
+            <th>날짜</th>
+        </td>
+        </thead>
+        <tbody>
+        {{#posts}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{title}}}</td>
+            <td>{{author}}}</td>
+            <td>{{modifiedDate.}}</td>
+        </tr>
+        {{/posts}}
+        </tbody>
+    </table>
+    <button class="btn btn-primary">
+        <a href="/bbs/write">쓰기</a>
+    </button>
+{{>layout/footer}}
