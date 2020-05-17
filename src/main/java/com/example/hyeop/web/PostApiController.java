@@ -5,11 +5,10 @@ import com.example.hyeop.service.post.PostService;
 import com.example.hyeop.web.dto.PostModifyRequestDto;
 import com.example.hyeop.web.dto.PostRequestDto;
 import com.example.hyeop.web.dto.PostResponseDto;
+import com.example.hyeop.web.dto.SearchPostDto;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @AllArgsConstructor
 @RestController
@@ -37,4 +36,6 @@ public class PostApiController {
     public void delete(@RequestBody PostModifyRequestDto requestDto) throws Exception {
         postService.deletePost(requestDto);
     }
+
+
 }

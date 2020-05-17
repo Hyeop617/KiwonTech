@@ -1,0 +1,57 @@
+{{>layout/header}}
+<h1 class="m-3">검색 결과</h1>
+<div>
+    <table class="table table-primary table-bordered m-3">
+        <thead>
+        <td>
+        <th>번호</th>
+        <th>제목</th>
+        <th>글쓴이</th>
+        <th>날짜</th>
+        </td>
+        </thead>
+        <tbody>
+        {{#postpage.postList}}
+            <tr>
+                <td></td>
+                <td>{{id}}</td>
+                <td>{{title}}</td>
+                <td>{{author}}</td>
+                <td>{{modify_date}}</td>
+                <td>
+                    <button class="btn">
+                        <a href="/bbs/modifycheck/{{id}}">관리</a>
+                    </button>
+                </td>
+            </tr>
+        {{/postpage.postList}}
+        </tbody>
+    </table>
+</div>
+<div>
+    <div class="col-xs-4">
+
+    </div>
+    <div class="col-xs-4 text-center">
+        {{#postpage.pageDto.pageList}}
+            <a class="ml-2 btn-secondary" style="font-size:20px; width:10px;" href="/bbs?page={{.}}">{{.}}</a>
+        {{/postpage.pageDto.pageList}}
+    </div>
+    <div class="col-xs-4 text-right">
+        <select id="search_type">
+            <option value="title">제목</option>
+            <option value="content">내용</option>
+            <option value="author">작성자</option>
+        </select>
+        <input type="search" id="in_keyword">
+        <button class="mr-2" id="btn-search">검색</button>
+    </div>
+</div>
+<div class="col-xs-12 text-center" style="float:none; margin:0 auto;">
+    <button class="btn btn-primary">
+        <div class="col-sm-12">
+            <a type="button" class="text-center btn text-dark" href="/bbs/write">쓰기</a>
+        </div>
+    </button>
+</div>
+{{>layout/footer}}
