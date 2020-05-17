@@ -1,7 +1,7 @@
 package com.example.hyeop.web;
 
 import com.example.hyeop.domain.post.PostsRepository;
-import com.example.hyeop.web.dto.PostsRequeestDto;
+import com.example.hyeop.web.dto.PostRequestDto;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +34,7 @@ public class PostsApiControllerTest {
         String content = "abc";
         String author = "author";
 
-        PostsRequeestDto requestDto = PostsRequeestDto.builder().title(title).content(content).author(author).build();
+        PostRequestDto requestDto = PostRequestDto.builder().title(title).content(content).author(author).build();
 
         String url = "http://localhost:" + port + "/api/save";
 

@@ -1,19 +1,21 @@
 package com.example.hyeop.web.dto;
 
-import com.example.hyeop.domain.post.Posts;
+import com.example.hyeop.domain.post.Post;
 import lombok.Getter;
 
 @Getter
-public class PostsResponseDto {
+public class PostResponseDto {
     private Long id;
     private String title;
     private String content;
     private String author;
+//    private String password;
 
-    public PostsResponseDto(Posts entity) {
+    public PostResponseDto(Post entity) {
         this.id = entity.getId();
         this.title = entity.getTitle();
         this.content = entity.getContent();
         this.author = entity.getAuthor();
+//        this.password = entity.getPassword();
     }
 }

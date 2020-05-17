@@ -1,0 +1,33 @@
+{{>layout/header}}
+
+<h2>게시물 수정</h2>
+<div class="col-md-12">
+    {{#post}}
+        <form>
+            <div class="form-group">
+                <label for="title">제목</label>
+                <input type="text" class="form-control" id="title" value="{{title}}">
+            </div>
+            <div class="form-group">
+                <label for="title">글쓴이</label>
+                <input type="text" class="form-control" id="author" value="{{author}}">
+            </div>
+            <div class="form-group">
+                <label for="title">내용</label>
+                <textarea id="content" cols="30" rows="10">{{content}}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="title">비밀번호</label>
+                <input type="password" class="form-control" value="{{password}}" id="password">
+            </div>
+            <input type="hidden" id="id" value="{{id}}">
+            <button type="button" class="btn btn-primary" id="btn-modify">수정</button>
+            <button type="button" class="btn btn-primary" id="btn-delete">삭제</button>
+            <button class="btn btn-block">
+                <a href="/bbs/">돌아가기</a>
+            </button>
+        </form>
+    {{/post}}
+
+</div>
+{{>layout/footer}}

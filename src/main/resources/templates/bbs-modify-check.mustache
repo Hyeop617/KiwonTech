@@ -1,0 +1,15 @@
+{{>layout/header}}
+<div>
+    <form>
+        <div class="form-group">
+            <label for="title">비밀번호</label>
+            <input type="password" class="form-control" id="password" placeholder="비밀번호">
+            <input type="hidden" class="form-control" id="id" value="{{id}}">
+        </div>
+        <button type="button" class="btn btn-primary" id="btn-modify-check">확인</button>
+        <button class="btn btn-block">
+            <a href="/bbs/">돌아가기</a>
+        </button>
+    </form>
+</div>
+{{>layout/footer}}

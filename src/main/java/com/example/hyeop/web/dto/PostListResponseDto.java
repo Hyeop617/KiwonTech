@@ -1,22 +1,21 @@
 package com.example.hyeop.web.dto;
 
-import com.example.hyeop.domain.post.Posts;
+import com.example.hyeop.domain.post.Post;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 
 @Getter
-public class PostsListResponseDto {
+public class PostListResponseDto {
     private Long id;
     private String title;
     private String author;
-    private LocalDate modifiedDate;
+    private LocalDate modify_date;
 
-    public PostsListResponseDto(Posts entity){
+    public PostListResponseDto(Post entity){
         this.id = entity.getId();
         this.title = entity.getTitle();
         this.author = entity.getAuthor();
-        this.modifiedDate = entity.modifiedDate.toLocalDate();
+        this.modify_date = entity.modify_date.toLocalDate();
     }
 
 }

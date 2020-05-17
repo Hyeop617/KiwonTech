@@ -1,26 +1,43 @@
 {{>layout/header}}
-    <h1>Hello World!</h1>
-    <table class="table table-primary table-bordered">
-        <thead>
-        <td>
-            <th>번호</th>
-            <th>제목</th>
-            <th>글쓴이</th>
-            <th>날짜</th>
-        </td>
-        </thead>
-        <tbody>
-        {{#posts}}
+<h1>Hello World!</h1>
+<table class="table table-primary table-bordered">
+    <thead>
+    <td>
+    <th>번호</th>
+    <th>제목</th>
+    <th>글쓴이</th>
+    <th>날짜</th>
+    </td>
+    </thead>
+    <tbody>
+    {{#post}}
         <tr>
+            <td></td>
             <td>{{id}}</td>
-            <td>{{title}}}</td>
-            <td>{{author}}}</td>
-            <td>{{modifiedDate.}}</td>
+            <td>{{title}}</td>
+            <td>{{author}}</td>
+            <td>{{modify_date}}</td>
+            <td>
+                <button>
+                    <a href="/bbs/modifycheck/{{id}}">수정</a>
+                </button>
+            </td>
         </tr>
-        {{/posts}}
-        </tbody>
-    </table>
-    <button class="btn btn-primary">
-        <a href="/bbs/write">쓰기</a>
-    </button>
+    {{/post}}
+    </tbody>
+</table>
+<div>
+    <div>
+        <select id="search_type">
+            <option value="title">제목</option>
+            <option value="author">작성</option>
+        </select>
+        <input type="search" id="in_keyword">
+        <button id="search">검색</button>
+    </div>
+</div>
+<button class="btn btn-primary">
+    <a href="/bbs/write">쓰기</a>
+</button>
+
 {{>layout/footer}}
