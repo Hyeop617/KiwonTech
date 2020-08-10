@@ -15,6 +15,9 @@ var write = {
             });
             $('#btn-search').on('click',function () {
                 _this.search();
+            });
+            $('#btn-sendmail').on('click',function () {
+                _this.sendmail();
             })
         },
         save: function () {
@@ -23,7 +26,6 @@ var write = {
                 author: $('#author').val(),
                 content: $('#content').val(),
                 password: $('#password').val()
-
             };
 
             $.ajax({
@@ -106,23 +108,32 @@ var write = {
                 alert(JSON.stringify(error));
             });
         },
+        sendmail: function () {
+            var data = {
+                title: $('#title').text(),
+                content: $('#content').text(),
+                author:$('#author').text(),
+                email: $('#email').val()
+            };
+            alert(data.author);
+
+            $.ajax({
+                type: 'POST',
+                url: '/api/sendmail',
+                dataType: 'text',
+                contentType: 'application/json; charset=UTF-8',
+                data: JSON.stringify(data)
+            }).done(function () {
+                alert('메일 전송 완료.');
+            }).fail(function (error) {
+                alert(JSON.stringify(error));
+            });
+        },
         search: function () {
             var data = {
                 "type": $('#search_type option:selected').val(),
                 "keyword": $('#in_keyword').val()
             };
-            // $.ajax({
-            //     type: 'GET',
-            //     url: '/bbs/search',
-            //     dataType: 'text',
-            //     contentType: 'application/json; charset=UTF-8',
-            //     data: data
-            // }).done(function () {
-            //     alert("searched")
-            //     window.location.href = '/bbs/search';
-            // }).fail(function (error) {
-            //     alert(JSON.stringify(error));
-            // })
             console.log(data);
             window.location.href = '/bbs/search?type=' + data.type
                 + '&keyword=' + data.keyword;

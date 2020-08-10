@@ -1,6 +1,5 @@
 package com.example.hyeop.web;
 
-import com.example.hyeop.domain.post.PostsRepository;
 import com.example.hyeop.web.dto.PostRequestDto;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,9 +23,6 @@ public class PostsApiControllerTest {
 
     @Autowired
     private TestRestTemplate restTemplate;
-
-    @Autowired
-    private PostsRepository postsRepository;
 
     @Test
     public void saveTest() throws Exception {

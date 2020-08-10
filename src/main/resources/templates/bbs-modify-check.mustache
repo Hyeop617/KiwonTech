@@ -1,15 +1,14 @@
 {{>layout/header}}
-<div>
+<div class="w-50" style="margin:0 auto">
     <form>
         <div class="form-group">
-            <label for="title">비밀번호</label>
-            <input type="password" class="form-control" id="password" placeholder="비밀번호">
+            <input type="password" class="form-control" id="password" placeholder="비밀번호를 입력하세요.">
             <input type="hidden" class="form-control" id="id" value="{{id}}">
         </div>
-        <button type="button" class="btn btn-primary" id="btn-modify-check">확인</button>
-        <button class="btn btn-block">
-            <a href="/bbs/">돌아가기</a>
-        </button>
+        <div class="text-center">
+            <button type="button" class="btn btn-primary" id="btn-modify-check">확인</button>
+            <a href="/bbs" class="btn btn-secondary" role="button">돌아가기</a>
+        </div>
     </form>
 </div>
 {{>layout/footer}}
